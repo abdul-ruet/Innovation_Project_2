@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Typing Speed Test</h1>
+
+    <p id="paragraph" class="hidden"></p>
+
+    <textarea id="input" placeholder="Start typing here..." disabled></textarea>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="reset-btn">Reset</button>
+      <span id="timer">60</span> seconds left
+    </div>
+
+    <div id="results" class="hidden">
+      <p>Total Words Typed: <span id="total-words">0</span></p>
+      <p>Correct Words: <span id="correct-words">0</span></p>
+      <p>WPM: <span id="wpm">0</span></p>
+      <p>Accuracy: <span id="accuracy">0</span>%</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
