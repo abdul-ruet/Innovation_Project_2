@@ -15,7 +15,7 @@ let countdown;
 let timeLeft = 60;
 let startTime = null;
 
-// Render paragraph as spans
+
 const renderParagraph = () => {
   paragraph.innerHTML = referenceText
     .split(" ")
@@ -23,7 +23,7 @@ const renderParagraph = () => {
     .join(" ");
 };
 
-// Start the test
+
 const startTest = () => {
   renderParagraph();
   paragraph.classList.remove("hidden");
@@ -46,7 +46,7 @@ const startTest = () => {
   }, 1000);
 };
 
-// End the test
+
 const endTest = () => {
   clearInterval(countdown);
   inputField.disabled = true;
@@ -54,7 +54,7 @@ const endTest = () => {
   updateLiveStats();
 };
 
-// Reset everything
+
 resetBtn.addEventListener("click", () => {
   clearInterval(countdown);
   inputField.disabled = true;
@@ -69,7 +69,7 @@ resetBtn.addEventListener("click", () => {
   startBtn.disabled = false;
 });
 
-// Live stats update while typing
+
 const updateLiveStats = () => {
   const typedText = inputField.value.trim();
   const typedWords = typedText.split(" ").filter(w => w !== "");
@@ -84,13 +84,13 @@ const updateLiveStats = () => {
   const wpm = elapsedTimeInMinutes > 0 ? Math.round(totalTyped / elapsedTimeInMinutes) : 0;
   const accuracy = totalTyped > 0 ? Math.round((correctTyped / totalTyped) * 100) : 0;
 
-  // Update display
+  
   totalWordsEl.innerText = totalTyped;
   correctWordsEl.innerText = correctTyped;
   wpmEl.innerText = wpm;
   accuracyEl.innerText = accuracy;
 
-  // Color feedback
+  
   const spans = paragraph.querySelectorAll("span");
   spans.forEach((span, i) => {
     const typedWord = typedWords[i] || "";
@@ -104,7 +104,7 @@ const updateLiveStats = () => {
   results.classList.remove("hidden");
 };
 
-// Event listeners
+
 startBtn.addEventListener("click", startTest);
 inputField.addEventListener("input", () => {
   if (!inputField.disabled) updateLiveStats();
